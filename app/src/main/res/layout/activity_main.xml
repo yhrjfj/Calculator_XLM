@@ -8,15 +8,15 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvInput"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:background="@color/light_grey"
         android:gravity="end|bottom"
         android:padding="10dp"
-        android:text="@string/calc_text"
         android:textSize="48sp" />
 
-<!--    7,8,9,/-->
+    <!--    7,8,9,/-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
 
     </LinearLayout>
 
-<!--    4,5,6-->
+    <!--    4,5,6-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -108,7 +108,7 @@
 
     </LinearLayout>
 
-<!--    1,2,3-->
+    <!--    1,2,3-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -154,7 +154,7 @@
 
     </LinearLayout>
 
-<!--    0,CLR,+-->
+    <!--    0,CLR,+-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -191,7 +191,7 @@
 
     </LinearLayout>
 
-<!--    Equal    -->
+    <!--    Equal    -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
