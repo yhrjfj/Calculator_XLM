@@ -22,4 +22,9 @@ class MainActivity : AppCompatActivity() {
         tvInput?.append((view as Button).text)
     }
 
+    // Clear screen
+    fun onClear(view: View){
+        tvInput?.text = ""
+    }
+
 }
