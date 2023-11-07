@@ -3,6 +3,8 @@
     <style name="Base.Theme.Calculator_XLM" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/grey</item>
+        <item name="colorPrimaryVariant">@color/grey</item>
     </style>
 
     <style name="Theme.Calculator_XLM" parent="Base.Theme.Calculator_XLM" />
