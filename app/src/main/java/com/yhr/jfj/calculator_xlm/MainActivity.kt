@@ -63,6 +63,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Remove zero after doing some calculation which is not a floating number
+    private fun removeZeroAfterDot(result: String): String{
+    var value = result
+        if (result.contains(".0")){
+            value = result.substring(0, result.length - 2)
+        }
+        return value
+    }
+
     // onEqual method, It works when user hit equal button
     @SuppressLint("SetTextI18n")
     fun onEqual(view: View) {
@@ -90,8 +99,9 @@ class MainActivity : AppCompatActivity() {
                     one = prefix + one
                 }
 
-                // View result
-                tvInput?.text = (one.toDouble() - two.toDouble()).toString()
+                // View result for minus
+                tvInput?.text = removeZeroAfterDot((one.toDouble() - two.toDouble()).toString())
+
             } else if (tvValue.contains("+")) {
                 // Plus operator
 
@@ -106,8 +116,9 @@ class MainActivity : AppCompatActivity() {
                     one = prefix + one
                 }
 
-                // View result
-                tvInput?.text = (one.toDouble() + two.toDouble()).toString()
+                // View result for plus
+                tvInput?.text = removeZeroAfterDot((one.toDouble() + two.toDouble()).toString())
+
             } else if (tvValue.contains("*")) {
                 // Multiply operator
 
@@ -122,8 +133,9 @@ class MainActivity : AppCompatActivity() {
                     one = prefix + one
                 }
 
-                // View result
-                tvInput?.text = (one.toDouble() * two.toDouble()).toString()
+                // View result for multiply
+                tvInput?.text = removeZeroAfterDot((one.toDouble() * two.toDouble()).toString())
+
             } else if (tvValue.contains("/")) {
                 // Deviation operator
 
@@ -138,8 +150,9 @@ class MainActivity : AppCompatActivity() {
                     one = prefix + one
                 }
 
-                // View result
-                tvInput?.text = (one.toDouble() / two.toDouble()).toString()
+                // View result for deviation
+                tvInput?.text = removeZeroAfterDot((one.toDouble() / two.toDouble()).toString())
+
             }
 
         } catch (e: ArithmeticException) {
