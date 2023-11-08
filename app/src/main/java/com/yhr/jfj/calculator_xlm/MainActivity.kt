@@ -35,6 +35,15 @@ class MainActivity : AppCompatActivity() {
         tvInput?.text = ""
     }
 
+    // Remove last digit from input screen
+    fun onAc(view: View) {
+        val value = tvInput?.text
+        if (value?.isNotEmpty() == true) {
+            tvInput?.text = value.substring(0, value.length - 1)
+        }
+    }
+
+
     // Decimal point
     fun onDecimalPoint(view: View) {
         if (lastNumeric && !lastDot) {
@@ -64,9 +73,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Remove zero after doing some calculation which is not a floating number
-    private fun removeZeroAfterDot(result: String): String{
-    var value = result
-        if (result.contains(".0")){
+    private fun removeZeroAfterDot(result: String): String {
+        var value = result
+        if (result.contains(".0")) {
             value = result.substring(0, result.length - 2)
         }
         return value
@@ -159,6 +168,4 @@ class MainActivity : AppCompatActivity() {
             e.printStackTrace()
         }
     }
-
-
 }

@@ -17,5 +17,6 @@
     <string name="Clear">Clear</string>
     <string name="Addition">+</string>
     <string name="Equal">=</string>
+    <string name="Ac">AC</string>
     <string name="Dot">.</string>
 </resources>

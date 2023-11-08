@@ -182,13 +182,13 @@
             tools:ignore="NestedWeights" />
 
         <Button
-            android:id="@+id/btnCLR"
+            android:id="@+id/btnAC"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:onClick="onClear"
-            android:text="@string/Clear" />
+            android:onClick="onAc"
+            android:text="@string/Ac" />
 
         <Button
             android:id="@+id/btnAddition"
@@ -207,6 +207,15 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCLR"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="onClear"
+            android:text="@string/Clear" />
 
         <Button
             android:id="@+id/btnEqual"
