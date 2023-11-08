@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                 var one = splitValue[0] // 99
                 val two = splitValue[1] // 1
 
-                // Though we remove the negative sign from the number, we will add it
+                // Though we remove the negative sign from the number, we will add that sign again
                 if (prefix.isNotEmpty()) {
                     one = prefix + one
                 }
