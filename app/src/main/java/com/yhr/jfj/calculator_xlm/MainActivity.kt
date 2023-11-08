@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Operator methods show
+    // Operator methods show. When user use one of the given operator he or she can not use other operator expect hit equal button
     fun onOperator(view: View) {
         tvInput?.text?.let {
             if (lastNumeric && !isOperatorAdded(it.toString())) {
