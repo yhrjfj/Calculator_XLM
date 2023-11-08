@@ -1,5 +1,6 @@
 package com.yhr.jfj.calculator_xlm
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -63,6 +64,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // onEqual method, It works when user hit equal button
+    @SuppressLint("SetTextI18n")
     fun onEqual(view: View) {
         var tvValue = tvInput?.text.toString()
         var prefix = ""
@@ -73,7 +75,10 @@ class MainActivity : AppCompatActivity() {
                 // Remove negative sign from the number. If the user gives -99, then we will remove the - sign and get 99 because we start from the 1st index
                 tvValue = tvValue.substring(1) // Update tvValue here
             }
+
             if (tvValue.contains("-")) {
+                // Minus operator
+
                 val splitValue = tvValue.split("-")
 
                 // Here we split the given number into two parts like: 99 - 1, which will be split into two parts, 99 and 1
@@ -87,7 +92,56 @@ class MainActivity : AppCompatActivity() {
 
                 // View result
                 tvInput?.text = (one.toDouble() - two.toDouble()).toString()
+            } else if (tvValue.contains("+")) {
+                // Plus operator
+
+                val splitValue = tvValue.split("+")
+
+                // Here we split the given number into two parts like: 99 - 1, which will be split into two parts, 99 and 1
+                var one = splitValue[0] // 99
+                val two = splitValue[1] // 1
+
+                // Though we remove the negative sign from the number, we will add that sign again
+                if (prefix.isNotEmpty()) {
+                    one = prefix + one
+                }
+
+                // View result
+                tvInput?.text = (one.toDouble() + two.toDouble()).toString()
+            } else if (tvValue.contains("*")) {
+                // Multiply operator
+
+                val splitValue = tvValue.split("*")
+
+                // Here we split the given number into two parts like: 99 - 1, which will be split into two parts, 99 and 1
+                var one = splitValue[0] // 99
+                val two = splitValue[1] // 1
+
+                // Though we remove the negative sign from the number, we will add that sign again
+                if (prefix.isNotEmpty()) {
+                    one = prefix + one
+                }
+
+                // View result
+                tvInput?.text = (one.toDouble() * two.toDouble()).toString()
+            } else if (tvValue.contains("/")) {
+                // Deviation operator
+
+                val splitValue = tvValue.split("/")
+
+                // Here we split the given number into two parts like: 99 - 1, which will be split into two parts, 99 and 1
+                var one = splitValue[0] // 99
+                val two = splitValue[1] // 1
+
+                // Though we remove the negative sign from the number, we will add that sign again
+                if (prefix.isNotEmpty()) {
+                    one = prefix + one
+                }
+
+                // View result
+                tvInput?.text = (one.toDouble() / two.toDouble()).toString()
             }
+
         } catch (e: ArithmeticException) {
             e.printStackTrace()
         }
